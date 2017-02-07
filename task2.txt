@@ -1,0 +1,45 @@
+You have an array:
+
+$table = [
+  ['ID', 'Title', 'Name', 'Age'],
+  [1, 'CEO', 'John', 35],
+  [2, 'CTO', 'Sandeep', 29],
+  [3, 'CFO', 'Laurel', 31],
+  [4, 'Manager', 'Andrew', 25],
+  [5, 'Engineer', 'Samantha', 26],
+  [6, 'Designer', 'Lee', 24]
+];
+
+Write a function which renders 2D array as an HTML table. Only first row cells should use <th> tag. The rest cells should use <td> tag.
+
+void : render_table(array $data)
+
+<?php
+function render_table() {
+  $table = [
+  ['ID', 'Title', 'Name', 'Age'],
+  [1, 'CEO', 'John', 35],
+  [2, 'CTO', 'Sandeep', 29],
+  [3, 'CFO', 'Laurel', 31],
+  [4, 'Manager', 'Andrew', 25],
+  [5, 'Engineer', 'Samantha', 26],
+  [6, 'Designer', 'Lee', 24]
+];
+
+    echo '<table>';
+    foreach($table as $row) {
+      echo('<tr>');
+        foreach($row as $cell) {
+          if ($row === $table[0]) {
+            echo('<th>' . $cell . '</th>');
+          } else {
+            echo('<td>' . $cell . '</td>');
+          }
+        }
+      echo('</tr>');
+    }
+  echo '</table>';
+}
+echo '<br>';
+echo render_table();
+?>
